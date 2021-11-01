@@ -1,62 +1,80 @@
-## Instructions
+# My Calendar App
 
-The goal of this exercise is to create a demo calendar application using React. We strongly recommend create-react-app to make the bootstrapping of your application really easy.
+[My Calendar Web Application](https://my-calendar-app-dy.herokuapp.com/) - Working link (Heroku deployed)
 
-Please don't use a `calendar` library, we would like to see your own calendar logic.
+## Features
+
+- Calendar view to organize reminders
+- Create reminders and assign it a date to see it in your calendar
+- Edit and delete reminders anytime
+- Your reminders can be color coded to be better organized
+- Sidebar drawer to display all reminders for a selected date.
+- Date picker to jump to any date in the calendar
+- Ability to go back or forward one month with the arrows
+
+## Tech
+
+Dillinger uses a number of open source projects to work properly:
+
+- [ReactJS](https://reactjs.org) - Main javascript framework
+- [React Redux](https://react-redux.js.org/) - State management library
+- [Material UI](https://mui.com/) -  great UI boilerplate for modern web apps
+- [Cypress](https://www.cypress.io/) - JavaScript End to End Testing Framework 
 
 
-### The Task
+## Installation
 
-You should start by rendering a single month view of a calendar for the current month – along with the lines of the `calendar` image in this project.
+My Calendar App requires [Node.js](https://nodejs.org/) v10+ to run.
+
+Install the dependencies and devDependhttps://my-calendar-app-dy.herokuapp.com/encies and start the server.
+
+```sh
+npm i
+```
+
+## Development
+
+Open your favorite Terminal and run these commands.
+
+To start the React server use:
+
+```sh
+npm start
+```
+
+To start the Cypress test:
+
+```sh
+npm test
+```
+
+Server and Test library set to run in http://localhost:3000/
 
 
-### Features & Requirements:
+## Screenshots
 
-* You need to use one of the following state management libraries: Relay, Apollo, MobX or Redux
-* Ability to add a new “reminder” (max 30 chars) for a user entered day and time.
-* Display reminders on the calendar view in the correct time order.
-* Allow the user to select a color when creating a reminder and display it appropriately.
-* Properly handle overflow when multiple reminders appear on the same date.
-* Ability to edit reminders – including changing text, day and time & color.
-* Ability to delete reminders.
-* Expand the calendar to support more than the current month.
+![Main](https://i.postimg.cc/0NNjxGk6/Screenshot-from-2021-10-31-16-59-13.png)
 
-### Notes:
+### - Main and first view when inside the application. Sidebar natural state is closed
 
-* The data should be retained across different page views, but it’s not necessary to persist it beyond a browser refresh.
-* Here at Codelitt we make products for humans, this means that we will evaluate the UX of the exercise.
+When a date in the calendar is clicked the sidebar will open and the selected date will change to show reminders for that date.
 
-## Evaluation
+![Main2](https://i.postimg.cc/bJ7wQKQb/Screenshot-from-2021-10-31-16-59-40.png)
 
-| Functionality     |                                                              | Possible Points |
-|-------------------|--------------------------------------------------------------|-----------------|
-|                   | Matches the proposed requirements                            | 25              |
-|                   | Console do not display any error/warning                     | 10              |
-|                   | User Experience                                              | 15              |
-| **Code Quality**  |                                                              | --              |
-|                   | Code format, readability, maintainability, etc.              | 10              |
-|                   | Folders and packages structure                               | 10              |
-|                   | Separation of components and logic by clear responsibilities | 20              |
-| **Testing**       |                                                              | --              |
-|                   | Has tests                                                    | 5               |
-| **Documentation** |                                                              | --              |
-|                   | Has a README.md with instructions                            | 5               |
-| **Total**         |                                                              | 100             |
+### - Main and view when sidebar is opened and no reminders are found for that date.
 
-### Bonus Points:
-1. If you deploy the application in any server and share the link with us
-2. If provide thoughts on what you could improve on your code given more time and incentives
+![Main3](https://i.postimg.cc/1XD5MJHd/Screenshot-from-2021-10-31-17-00-37.png)
 
-## F.A.Q.
+### - Main and view when sidebar is opened and reminders are found for that date.
 
-### Is it necessary to connect to a backend?
-No, this is a simply frontend exercise.
+When a reminder is clicked on in the sidebar, a form to edit that reminder will open.
 
-### How do you evaluate the exercise?
-For every exercise we have two senior frontend engineers from our team reviewing the code and the functionality and giving a score for each line item as shown in the previous table.
+![CalendarBar](https://i.postimg.cc/9MRfwWqC/Screenshot-from-2021-10-31-16-59-32.png)
 
-### How can I deliver the exercise?
-To deliver the exercise, you should clone this repository and work on a new branch. When you'll consider it completed, just push the branch and open a Merge Request.
+### - Calendar bar: 
+* Add a reminber button: Open a form to add a new reminder
+* Datepicker to switch to any date in the calendar
+* Back arrow to go back one month
+* Text with current month
+* Forward arrow to go forward one month
 
-### Will I have access to the evaluation?
-By default we only send the result, however you can feel free to request the full evaluation and we will share it with you as well as the final score.

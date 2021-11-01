@@ -126,7 +126,11 @@ const Reminders = () => {
         ) : null}
         <List>
           {orderedReminders?.map((current, index) => (
-            <ListItemReminder reminder={current} index={index} />
+            <ListItemReminder
+              key={current.uuid}
+              reminder={current}
+              index={index}
+            />
           ))}
         </List>
       </Drawer>

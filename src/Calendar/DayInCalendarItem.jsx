@@ -39,7 +39,7 @@ const DayInCalendarItem = ({ day, selectedDate, reminders }) => {
         width: "14%",
       }}
     >
-      <Box sx={{ height: 100, display: "flex" }}>
+      <Box sx={{ overflowY: "auto", height: 100, display: "flex" }}>
         <Grid container spacing={1}>
           {isSelectedDateToday() ? (
             <Grid style={{ color: "#1976d2" }} item xs={12}>
@@ -51,41 +51,18 @@ const DayInCalendarItem = ({ day, selectedDate, reminders }) => {
             </Grid>
           )}
 
-          {orderedReminders[0] ? (
-            <Grid item xs={12}>
-              <Typography
-                variant="h8"
-                style={{ color: orderedReminders[0].color }}
-              >
-                {orderedReminders[0].date.getHours() +
+          {orderedReminders?.map((reminder, index) => (
+            <Grid key={reminder.uuid} item xs={12}>
+              <Typography variant="h8" style={{ color: reminder.color }}>
+                {reminder.date.getHours() +
                   ":" +
-                  orderedReminders[0].date.getMinutes() +
+                  reminder.date.getMinutes() +
                   " "}
-                {orderedReminders[0].title.slice(0, 10)}
-                {orderedReminders[0].title.length > 10 ? "..." : null}
+                {reminder.title.slice(0, 10)}
+                {reminder.title.length > 10 ? "..." : null}
               </Typography>
             </Grid>
-          ) : null}
-          {orderedReminders[1] ? (
-            <Grid item xs={12}>
-              <Typography
-                variant="h8"
-                style={{ color: orderedReminders[1].color }}
-              >
-                {orderedReminders[1].date.getHours() +
-                  ":" +
-                  orderedReminders[1].date.getMinutes() +
-                  " "}
-                {orderedReminders[1].title.slice(0, 10)}
-                {orderedReminders[1].title.length > 10 ? "..." : null}
-              </Typography>
-            </Grid>
-          ) : null}
-          {orderedReminders[3] ? (
-            <Grid item xs={12}>
-              <Typography variant="h6">...</Typography>
-            </Grid>
-          ) : null}
+          ))}
         </Grid>
       </Box>
     </TableCell>

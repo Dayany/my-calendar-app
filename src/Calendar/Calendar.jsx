@@ -12,7 +12,6 @@ const Calendar = () => {
         py: 3,
       }}
     >
-      <h1>Calendar</h1>
       <CalendarBar />
       <ShowCalendar />
     </Box>

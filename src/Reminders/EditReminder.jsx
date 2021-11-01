@@ -55,6 +55,7 @@ export default function EditReminder({ open, reminderParent, setOpen }) {
   };
   const deleteReminder = () => {
     dispatch({ type: "DELETE_REMINDER", payload: reminderParent });
+    // setOpen(false);
   };
   const handleChangeColor = (event) => {
     setColor(event.target.value);
